@@ -1,0 +1,150 @@
+/* Universal Selector */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Body Style */
+
+body {
+
+    background: linear-gradient(to right, lightblue, white);
+
+    font-family: Arial;
+
+    padding: 20px;
+
+}
+
+/* Navigation Style */
+
+nav {
+
+    background-color: black;
+
+    padding: 15px;
+
+}
+
+/* Navigation Links */
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin-right: 20px;
+
+}
+
+/* Main Header */
+
+#mainHeader {
+
+    color: darkblue;
+
+    margin-top: 20px;
+
+}
+
+/* Highlight Text */
+
+.highlight {
+
+    color: red;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+
+}
+
+/* Section Heading */
+
+h2 {
+
+    color: darkgreen;
+
+    margin-top: 20px;
+
+}
+
+/* Event Card */
+
+.eventCard {
+
+    background-color: rgba(255,255,255,0.8);
+
+    border: 2px solid black;
+
+    padding: 15px;
+
+    margin-top: 20px;
+
+    width: 300px;
+
+}
+
+/* Image Style */
+
+img {
+
+    width: 250px;
+
+    height: 150px;
+
+    border: 2px solid black;
+
+}
+
+/* Group Selector */
+
+h3, p {
+
+    margin-top: 10px;
+
+}
+
+/* Form Style */
+
+form {
+
+    margin-top: 20px;
+
+}
+
+/* Input Fields */
+
+input {
+
+    padding: 10px;
+
+    width: 250px;
+
+}
+
+/* Button Style */
+
+button {
+
+    background-color: blue;
+
+    color: white;
+
+    padding: 10px;
+
+    border: none;
+
+}
+
+/* Footer */
+
+footer {
+
+    margin-top: 30px;
+
+}

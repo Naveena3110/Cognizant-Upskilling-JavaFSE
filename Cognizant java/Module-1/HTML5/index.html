@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community Event Portal</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        img {
+            border: 2px solid black;
+            width: 150px;
+            height: 100px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+
+        function showMessage() {
+            document.getElementById("output").value =
+                "Registration Successful";
+        }
+
+        function countText() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("count").innerHTML =
+                "Characters: " + text.length;
+        }
+
+        function showFee() {
+
+            let event =
+                document.getElementById("event").value;
+
+            if (event == "Music") {
+                document.getElementById("fee").innerHTML =
+                    "Fee: ₹500";
+            }
+
+            else if (event == "Sports") {
+                document.getElementById("fee").innerHTML =
+                    "Fee: ₹300";
+            }
+
+            else {
+                document.getElementById("fee").innerHTML =
+                    "Fee: ₹700";
+            }
+        }
+
+        function findLocation() {
+
+            navigator.geolocation.getCurrentPosition(
+
+                function(position) {
+
+                    document.getElementById("location")
+                        .innerHTML =
+
+                        "Latitude: " +
+                        position.coords.latitude +
+
+                        "<br>Longitude: " +
+                        position.coords.longitude;
+                }
+
+            );
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#events">Events</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="help.html" target="_blank">
+            Help
+        </a>
+
+    </nav>
+
+    <!-- Home Section -->
+
+    <section id="home">
+
+        <div id="welcomeBanner">
+
+            Welcome to Community Portal
+
+            <span class="highlight">
+                Special Offer!
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+
+    <section id="events">
+
+        <h2>Event Gallery</h2>
+
+        <table border="1">
+
+            <tr>
+
+                <td>
+                    <img src="https://via.placeholder.com/150"
+                        alt="Music">
+                    <p>Music Event</p>
+                </td>
+
+                <td>
+                    <img src="https://via.placeholder.com/150"
+                        alt="Sports">
+                    <p>Sports Event</p>
+                </td>
+
+                <td>
+                    <img src="https://via.placeholder.com/150"
+                        alt="Workshop">
+                    <p>Workshop</p>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Registration Form -->
+
+    <section>
+
+        <h2>Register Here</h2>
+
+        <form>
+
+            <input type="text"
+                placeholder="Enter Name"
+                required
+                autofocus>
+
+            <br><br>
+
+            <input type="email"
+                placeholder="Enter Email"
+                required>
+
+            <br><br>
+
+            <input type="date">
+
+            <br><br>
+
+            <select id="event"
+                onchange="showFee()">
+
+                <option>Music</option>
+                <option>Sports</option>
+                <option>Workshop</option>
+
+            </select>
+
+            <p id="fee"></p>
+
+            <textarea id="feedback"
+                placeholder="Feedback"
+                onkeyup="countText()"></textarea>
+
+            <p id="count"></p>
+
+            <button type="button"
+                onclick="showMessage()">
+
+                Submit
+
+            </button>
+
+            <output id="output"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video -->
+
+    <section>
+
+        <h2>Event Video</h2>
+
+        <video width="300"
+            controls>
+
+            <source src="sample.mp4"
+                type="video/mp4">
+
+        </video>
+
+    </section>
+
+    <!-- Geolocation -->
+
+    <section>
+
+        <h2>Nearby Events</h2>
+
+        <button onclick="findLocation()">
+
+            Find Nearby Events
+
+        </button>
+
+        <p id="location"></p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="contact">
+
+        <h3>Contact</h3>
+
+        <p>Email: community@gmail.com</p>
+
+    </footer>
+
+</body>
+
+</html>

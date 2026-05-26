@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <title>Community Event Portal</title>
 
     <style>
+
         body {
             font-family: Arial;
             margin: 20px;
@@ -34,21 +37,52 @@
         }
 
         img {
-            border: 2px solid black;
             width: 150px;
             height: 100px;
+            border: 2px solid black;
         }
 
         form {
             margin-top: 20px;
         }
+
     </style>
 
     <script>
 
         function showMessage() {
+
             document.getElementById("output").value =
                 "Registration Successful";
+
+        }
+
+        function showFee() {
+
+            let event =
+                document.getElementById("event").value;
+
+            if(event == "Music") {
+
+                document.getElementById("fee").innerHTML =
+                    "Fee : ₹500";
+
+            }
+
+            else if(event == "Sports") {
+
+                document.getElementById("fee").innerHTML =
+                    "Fee : ₹300";
+
+            }
+
+            else {
+
+                document.getElementById("fee").innerHTML =
+                    "Fee : ₹700";
+
+            }
+
         }
 
         function countText() {
@@ -57,28 +91,15 @@
                 document.getElementById("feedback").value;
 
             document.getElementById("count").innerHTML =
-                "Characters: " + text.length;
+                "Characters : " + text.length;
+
         }
 
-        function showFee() {
+        function enlargeImage(img) {
 
-            let event =
-                document.getElementById("event").value;
+            img.style.width = "250px";
+            img.style.height = "180px";
 
-            if (event == "Music") {
-                document.getElementById("fee").innerHTML =
-                    "Fee: ₹500";
-            }
-
-            else if (event == "Sports") {
-                document.getElementById("fee").innerHTML =
-                    "Fee: ₹300";
-            }
-
-            else {
-                document.getElementById("fee").innerHTML =
-                    "Fee: ₹700";
-            }
         }
 
         function findLocation() {
@@ -88,16 +109,18 @@
                 function(position) {
 
                     document.getElementById("location")
-                        .innerHTML =
+                    .innerHTML =
 
-                        "Latitude: " +
-                        position.coords.latitude +
+                    "Latitude : " +
+                    position.coords.latitude +
 
-                        "<br>Longitude: " +
-                        position.coords.longitude;
+                    "<br>Longitude : " +
+                    position.coords.longitude;
+
                 }
 
             );
+
         }
 
     </script>
@@ -122,13 +145,13 @@
 
     </nav>
 
-    <!-- Home Section -->
+    <!-- Home -->
 
     <section id="home">
 
         <div id="welcomeBanner">
 
-            Welcome to Community Portal
+            Welcome to Community Event Portal
 
             <span class="highlight">
                 Special Offer!
@@ -138,7 +161,7 @@
 
     </section>
 
-    <!-- Events Section -->
+    <!-- Events -->
 
     <section id="events">
 
@@ -149,21 +172,36 @@
             <tr>
 
                 <td>
-                    <img src="https://via.placeholder.com/150"
-                        alt="Music">
+
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300"
+                    alt="Music Event"
+                    title="Music Event"
+                    ondblclick="enlargeImage(this)">
+
                     <p>Music Event</p>
+
                 </td>
 
                 <td>
-                    <img src="https://via.placeholder.com/150"
-                        alt="Sports">
+
+                    <img src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=300"
+                    alt="Sports Event"
+                    title="Sports Event"
+                    ondblclick="enlargeImage(this)">
+
                     <p>Sports Event</p>
+
                 </td>
 
                 <td>
-                    <img src="https://via.placeholder.com/150"
-                        alt="Workshop">
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300"
+                    alt="Workshop"
+                    title="Workshop"
+                    ondblclick="enlargeImage(this)">
+
                     <p>Workshop</p>
+
                 </td>
 
             </tr>
@@ -176,20 +214,20 @@
 
     <section>
 
-        <h2>Register Here</h2>
+        <h2>Event Registration</h2>
 
         <form>
 
             <input type="text"
-                placeholder="Enter Name"
-                required
-                autofocus>
+            placeholder="Enter Name"
+            required
+            autofocus>
 
             <br><br>
 
             <input type="email"
-                placeholder="Enter Email"
-                required>
+            placeholder="Enter Email"
+            required>
 
             <br><br>
 
@@ -198,10 +236,12 @@
             <br><br>
 
             <select id="event"
-                onchange="showFee()">
+            onchange="showFee()">
 
                 <option>Music</option>
+
                 <option>Sports</option>
+
                 <option>Workshop</option>
 
             </select>
@@ -209,13 +249,15 @@
             <p id="fee"></p>
 
             <textarea id="feedback"
-                placeholder="Feedback"
-                onkeyup="countText()"></textarea>
+            placeholder="Feedback"
+            onkeyup="countText()"></textarea>
 
             <p id="count"></p>
 
+            <br>
+
             <button type="button"
-                onclick="showMessage()">
+            onclick="showMessage()">
 
                 Submit
 
@@ -233,11 +275,10 @@
 
         <h2>Event Video</h2>
 
-        <video width="300"
-            controls>
+        <video width="300" controls>
 
             <source src="sample.mp4"
-                type="video/mp4">
+            type="video/mp4">
 
         </video>
 
@@ -265,7 +306,7 @@
 
         <h3>Contact</h3>
 
-        <p>Email: community@gmail.com</p>
+        <p>Email : community@gmail.com</p>
 
     </footer>
 
